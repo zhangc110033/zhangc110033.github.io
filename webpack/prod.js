@@ -1,5 +1,4 @@
 var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     entry: './src/main.js',
     output: {
@@ -40,9 +39,6 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('common.js'), new webpack.DefinePlugin({
-            ENV: JSON.stringify('prod')
-        }), new HtmlWebpackPlugin({
-            template: "index.html",
-            hash: true,
+            ENV: JSON.stringify('dev')
         })],
 }
